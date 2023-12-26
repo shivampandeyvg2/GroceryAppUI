@@ -1,6 +1,6 @@
 <template>
     <div class="login-container">
-      <h2>Member Login</h2>
+      <h2>User Login</h2>
       <form @submit.prevent="login">
         <div class="form-group">
           <label for="id">ID:</label>
@@ -34,7 +34,7 @@
     methods: {
       async login() {
         try {
-          const response = await axios.post('http://127.0.0.1:5000/api/staff/signin', {
+          const response = await axios.post('http://127.0.0.1:5000/api/users/signin', {
             userid: this.loginData.id,
             password: this.loginData.password
           });
@@ -44,8 +44,7 @@
             const token = response.data.token;
             this.$globals.token = token;
             this.$globals.userid = this.loginData.id;
-            console.log(this.$globals.userid)
-            this.$router.push({ name: 'StaffHome', params: { userid:  this.loginData.id } });
+            this.$router.push({ name: 'UserHome', params: { userid:  this.loginData.id } });
             
           }
            else {

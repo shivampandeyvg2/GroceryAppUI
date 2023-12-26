@@ -17,9 +17,10 @@
 
 
     <div v-if="edit" class="overlay">
+      
+      <div class="profile">
         <button @click="closeProfile" class="close-button">&#10005;</button>
 
-      <div class="profile">
         <h2>Category Request Details : </h2>
         <p v-if ="viewdata.id">Request ID: {{ viewdata.id }}</p>
         <p v-if ="viewdata.title">Title: {{ viewdata.title }}</p>
@@ -110,6 +111,7 @@
         {
           this.acc = response.data.data.acc;
           this.viewdata = response.data.data.data;
+          console.log(this.viewdata);
           this.edit = response.data.data.edit;
           console.log(this.acc);
           console.log(this.edit);
@@ -180,6 +182,19 @@
   align-items: center;
   z-index: 999; /* Ensure it's above other content */
 }
+
+/* .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* z-index: 999; Ensure it's above other content */
+/* }  */
 
 /* Styles for the profile container */
 .profile {

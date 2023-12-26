@@ -174,6 +174,9 @@
         this.iscreate = false;
         this.editdata ={};
         this.viewdata = {};
+        this.formData ={title: '',
+        description: '',
+            };
       },
 
       async fetchdata(){

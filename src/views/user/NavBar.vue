@@ -1,11 +1,13 @@
 <template>
     
       <!-- Top Navbar -->
-      
       <nav class="navbar">
-       
         <ul>
-          <li><router-link :to="{ name: 'StaffHome', params: { userid:  this.$globals.userid }}">Dashboard</router-link></li>
+          <li><router-link :to="{ name: 'UserHome', params: { userid:  this.$globals.userid }}">Dashboard</router-link></li>
+          <li><router-link :to="{ name: 'UserCart', params: { userid:  this.$globals.userid }}">Cart</router-link></li>
+          <!-- <li><router-link to="/staff/summary">Profile</router-link></li>
+          <li><router-link to ="/staff/login">Cart</router-link></li>
+          <li><router-link to ="/staff/login">Logout</router-link></li> -->
         </ul>
       </nav>
 
@@ -13,17 +15,6 @@
 
 <script>
 export default {
-
-  data() {
-      return {
-        userid: this.$globals.userid
-      };
-    },
-    methods:
-    {
-
-    }
-   
 }
 </script>
 

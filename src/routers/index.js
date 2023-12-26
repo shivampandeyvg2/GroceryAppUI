@@ -6,6 +6,10 @@ import AdminCategories from '@/views/admin/AdminCategories.vue';
 import StaffSignup from '@/views/staff/StaffSignup.vue'
 import StaffSignin from '@/views/staff/StaffSignin.vue'
 import StaffHome from '@/views/staff/StaffHome.vue'
+import UserSignin from '@/views/user/UserSignin.vue'
+import UserSignup from '@/views/user/UserSignup.vue'
+import UserHome from '@/views/user/UserHome.vue'
+import UserCart from '@/views/user/UserCart.vue'
 
 
 const routes = [
@@ -40,9 +44,31 @@ const routes = [
     component: StaffSignin
   },
   {
-    path: '/staff/home',
+    path: '/staff/home/:userid',
     name: 'StaffHome',
     component: StaffHome
+  },
+  {
+    path: '/user/login',
+    name: 'UserSignin',
+    component: UserSignin
+  },
+  {
+    path: '/user/signup',
+    name: 'UserSignup',
+    component: UserSignup
+  },
+
+  {
+    path: '/user/home/:userid',
+    name: 'UserHome',
+    component: UserHome
+  },
+
+  {
+    path: '/user/cart/:userid',
+    name: 'UserCart',
+    component: UserCart
   },
   // Other routes...
 ];
